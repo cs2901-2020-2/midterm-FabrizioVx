@@ -1,4 +1,6 @@
-package midTerm;
+package midterm;
+
+import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +18,20 @@ public class Subject extends Observable{
     public void add(String first, Integer value){
         Point dataPoint = new Point(value, first);
         data.add(dataPoint);
-        notifyAllObservable(this);
+        try {
+            notifyAllObservable(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void remove(String first){
         if(data.isEmpty()) return;
         data.removeIf(point -> point.getIndex().equals(first));
-        notifyAllObservable(this);
+        try {
+            notifyAllObservable(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

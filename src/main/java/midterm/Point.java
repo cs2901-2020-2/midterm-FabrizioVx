@@ -1,4 +1,4 @@
-package midTerm;
+package midterm;
 
 public class Point {
     private Integer value;

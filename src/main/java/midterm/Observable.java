@@ -1,5 +1,6 @@
-package midTerm;
+package midterm;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Observable {
         observersList.add(observer);
     }
 
-    public void notifyAllObservable(Subject subject){
+    public void notifyAllObservable(Subject subject) throws IOException {
         for(Observers observers: observersList)
             observers.update(subject);
     }

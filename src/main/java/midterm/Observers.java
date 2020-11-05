@@ -1,4 +1,4 @@
-package midTerm;
+package midterm;
 
 import java.io.IOException;
 
