@@ -15,7 +15,7 @@ import java.io.IOException;
 public class BarChart implements Observers{
 
     @Override
-    public void update(Subject graph) throws IOException {
+    public boolean update(Subject graph) throws IOException {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for(Point point: graph.getData()){
             dataset.setValue(point.getValue(),point.getIndex(),"");
@@ -26,5 +26,6 @@ public class BarChart implements Observers{
         File f = new File("PNGBarChart.png");
         BufferedImage barImage = graphBarChart.createBufferedImage(600,400,null);
         ImageIO.write(barImage,"png",f);
+        return f.exists();
     }
 }

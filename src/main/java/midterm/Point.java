@@ -4,7 +4,7 @@ public class Point {
     private Integer value;
     private String index;
 
-    Point(Integer value, String index){
+    public Point(Integer value, String index){
         this.value = value;
         this.index = index;
     }

@@ -2,7 +2,6 @@ package midterm;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.general.DefaultPieDataset;
 
 import javax.imageio.ImageIO;
@@ -13,7 +12,7 @@ import java.io.IOException;
 public class PieChart implements Observers {
 
     @Override
-    public void update(Subject graph) {
+    public boolean update(Subject graph) {
         DefaultPieDataset dataset = new DefaultPieDataset();
         for(Point point: graph.getData()){
             dataset.setValue(point.getIndex(),point.getValue());
@@ -27,5 +26,6 @@ public class PieChart implements Observers {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return f.exists();
     }
 }

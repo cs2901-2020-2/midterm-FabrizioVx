@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Observable {
-    public List<Observers> observersList = new ArrayList<Observers>();
+    final public List<Observers> observersList = new ArrayList<>();
     public void remove(Observers observer){
         observersList.remove(observer);
     }

@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Subject extends Observable{
-    public List<Point> data;
+    final public List<Point> data;
     public Subject(){
-        data = new ArrayList<Point>();
+        data = new ArrayList<>();
     }
 
     public List<Point> getData() {
