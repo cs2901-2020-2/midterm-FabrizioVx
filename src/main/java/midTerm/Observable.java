@@ -13,8 +13,8 @@ public class Observable {
         observersList.add(observer);
     }
 
-    public void notifyAllObservable(){
+    public void notifyAllObservable(Subject subject){
         for(Observers observers: observersList)
-            observers.update();
+            observers.update(subject);
     }
 }

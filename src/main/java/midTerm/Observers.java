@@ -1,5 +1,7 @@
 package midTerm;
 
+import java.io.IOException;
+
 public interface Observers {
-    void update();
+    void update(Subject other) throws IOException;
 }
